@@ -127,3 +127,60 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*.DS_Store
+*.pyc
+*.swp
+temp/*
+dist/*
+build/*
+keras/datasets/data/*
+keras/datasets/temp/*
+docs/site/*
+docs/sources/*
+docs/theme/fonts/*
+docs/theme/img/*
+tags
+Keras.egg-info
+examples/img/*
+.DS_Store
+.ipynb_checkpoints
+node_modules
+/.bazelrc.user
+/.tf_configure.bazelrc
+/bazel-*
+/bazel_pip
+/tools/python_bin_path.sh
+/tensorflow/tools/git/gen
+/pip_test
+/_python_build
+__pycache__
+.vscode/
+cmake_build/
+tensorflow/contrib/cmake/_build/
+.idea/**
+/build/
+[Bb]uild/
+/tensorflow/core/util/version_info.cc
+/tensorflow/python/framework/fast_tensor_util.cpp
+/tensorflow/lite/gen/**
+/tensorflow/lite/tools/make/downloads/**
+/tensorflow/lite/tools/make/gen/**
+/api_init_files_list.txt
+/estimator_api_init_files_list.txt
+*.whl
+
+# test-related
+.coverage
+.cache
+.pytest_cache
+
+# developer environments
+.idea
+.vscode
+
+# Dataset
+celeba-dataset/
+
+# Python env
+venv/
