@@ -5,7 +5,7 @@ import matplotlib
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
 
-img_path = "img/surprise.jpg"
+img_path = "uploads/surprise.jpg"
 
 image = cv2.imread(img_path)
 
