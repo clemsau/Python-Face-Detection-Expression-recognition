@@ -25,8 +25,10 @@ def index():
         return render_template("index.html")
     if request.method == 'POST':
         json = {}
-        print(request)
-        print(request.files)
+        files = list(request.files)
+        print("request: " + str(request))
+        print("request.files: " + request.files)
+        print("listed files: " + str(files))
         if 'image' in request.files:
             image = request.files['image']
             print("wow: " + str(request.files.filename))
