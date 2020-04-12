@@ -11,6 +11,8 @@ from werkzeug.utils import secure_filename
 from deepface import DeepFace
 import cv2
 import matplotlib
+from numba import cuda
+
 
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
@@ -36,4 +38,6 @@ def index():
                 f.write(image)
                 print
             json = DeepFace.analyze(image_path)
+            device = cuda.get_current_device()
+            device.reset()
         return jsonify(json)
