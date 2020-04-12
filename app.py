@@ -25,7 +25,7 @@ def index():
         return render_template("index.html")
     if request.method == 'POST':
         json = {}
-        files = request.args
+        files = request.form
         print("files: " + str(files))
         if 'image' in request.files:
             image = request.files['image']
