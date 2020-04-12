@@ -34,5 +34,6 @@ def index():
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_name)
             with open(image_path, 'wb') as f:
                 f.write(image)
+                print
             json = DeepFace.analyze(image_path)
         return jsonify(json)
