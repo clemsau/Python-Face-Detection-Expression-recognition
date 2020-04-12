@@ -25,8 +25,11 @@ def index():
         return render_template("index.html")
     if request.method == 'POST':
         json = {}
+        print(request)
+        print(request.files)
         if 'image' in request.files:
             image = request.files['image']
+            print("wow: " + str(request.files.filename))
             if image.filename != '':
                 image_name = secure_filename(image.filename)
                 image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_name)
