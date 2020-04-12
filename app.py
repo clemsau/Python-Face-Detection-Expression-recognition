@@ -8,6 +8,7 @@ from config import SECRET_KEY, UPLOAD_PATH, TEMPLATE_FOLDER
 from werkzeug.utils import secure_filename
 
 # Classifier imports
+import tensorflow as tf
 from deepface import DeepFace
 import cv2
 import matplotlib
@@ -38,6 +39,5 @@ def index():
                 f.write(image)
                 print
             json = DeepFace.analyze(image_path)
-            device = cuda.get_current_device()
-            device.reset()
+            tf.keras.backend.clear_session()
         return jsonify(json)
