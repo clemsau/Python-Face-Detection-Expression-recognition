@@ -30,7 +30,6 @@ def index():
         if 'image' in request.form:
             image = request.form['image']
             image = base64.b64decode(image)
-            print("wow: " + str(request.files.filename))
             image_name = uuid.uuid4().hex + '.jpg'
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_name)
             with open(image_path, 'wb') as f:
