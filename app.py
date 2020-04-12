@@ -25,9 +25,8 @@ def index():
         return render_template("index.html")
     if request.method == 'POST':
         json = {}
-        files = list(request.files)
-        print("request.files: " + request.files)
-        print("listed files: " + str(files))
+        files = pippo = request.form.getlist('name[]')
+        print("files: " + files)
         if 'image' in request.files:
             image = request.files['image']
             print("wow: " + str(request.files.filename))
