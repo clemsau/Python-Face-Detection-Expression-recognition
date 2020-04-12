@@ -26,7 +26,6 @@ def index():
     if request.method == 'POST':
         json = {}
         files = list(request.files)
-        print("request: " + str(request))
         print("request.files: " + request.files)
         print("listed files: " + str(files))
         if 'image' in request.files:
