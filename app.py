@@ -29,8 +29,9 @@ def index():
     if request.method == 'GET':
         return render_template("index.html")
     if request.method == 'POST':
-        json = {}
+        json = {'message':'no image sent'}
         if 'image' in request.form:
+            json = {'message':'no face in the picture'}
             image = request.form['image']
             image = base64.b64decode(image)
             image_name = uuid.uuid4().hex + '.jpg'
