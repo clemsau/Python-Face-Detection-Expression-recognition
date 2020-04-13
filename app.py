@@ -38,5 +38,8 @@ def index():
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_name)
             with open(image_path, 'wb') as f:
                 f.write(image)
-            json = DeepFace.analyze(image_path, ['emotion'])
+            try:
+                json = DeepFace.analyze(image_path, ['emotion'])
+            except:
+                pass
         return jsonify(json)
