@@ -5,15 +5,12 @@ import uuid
 
 from flask import Flask, request, jsonify, render_template
 from config import SECRET_KEY, UPLOAD_PATH, TEMPLATE_FOLDER
-from werkzeug.utils import secure_filename
 
 # Classifier imports
 import tensorflow as tf
 from deepface import DeepFace
 import cv2
 import matplotlib
-from numba import cuda
-
 
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
@@ -29,9 +26,9 @@ def index():
     if request.method == 'GET':
         return render_template("index.html")
     if request.method == 'POST':
-        json = {'message':'no image sent'}
+        json = {'message': 'no image sent'}
         if 'image' in request.form:
-            json = {'message':'no face in the picture'}
+            json = {'message': 'no face in the picture'}
             image = request.form['image']
             image = base64.b64decode(image)
             image_name = uuid.uuid4().hex + '.jpg'
